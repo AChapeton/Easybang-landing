@@ -1,4 +1,7 @@
 @import "./header.scss";
+@import "./hero.scss";
+@import "./menu.scss";
+@import "./why.scss";
 
 :root{
     --darkBlue: hsl(233, 26%, 24%);
@@ -14,6 +17,10 @@
     font-size: 16px;
 }
 
+.is-hidden{
+    display: none !important;
+}
+
 body{
     margin: 0;
     font-family: 'Public Sans', sans-serif;
@@ -24,32 +31,19 @@ body{
     padding: 0 var(--wrapperSpace);
 }
 
-.hero{
-    // border: 1px solid red;
-    text-align: center;
-    .copy{
-        margin-bottom: 2.5rem;
-    }
-    &__image{
-        // border: 1px solid red;
-        height: 300px;
-        //Margin para contrarestar el espacio del wrapper
-        margin: 0 calc(var(--wrapperSpace) * -1);
-        margin-bottom: 1.2rem;
-        background: url('../images/image-mockups.png') center bottom no-repeat, url('../images/bg-intro-mobile.svg') center no-repeat;
-        background-size: 345px, cover;
-    }
-}
-
 .title{
     &__h1{
         // border: 1px solid blue;
-        font-size: 2.7rem;
+        font-size: 2.5rem;
         color: var(--darkBlue);
         font-weight: 300;
         line-height: 1.2;
         margin: 0;
         margin-bottom: .5rem;
+    }
+    &__h2{
+        @extend .title__h1;
+        font-size: 1.5rem;
     }
 }
 
