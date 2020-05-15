@@ -1,12 +1,52 @@
-body {
-  border: 10px solid red;
-  font-family: "Public Sans", sans-serif;
+:root {
+  --darkBlue: hsl(233, 26%, 24%);
+  --limeGreen:hsl(136, 65%, 51%);
+  --brightCyan: hsl(192, 70%, 51%);
+  --grayishBlue:hsl(233, 8%, 62%);
+  --lightGrayishBlue: hsl(220, 16%, 96%);
+  --lightGray: hsl(0, 0%, 98%);
+  --white: hsl(0, 0%, 100%);
+  font-size: 16px;
 }
 
-h1 {
-  border: 1px solid orange;
+body {
+  margin: 0;
+  font-family: "Public Sans", sans-serif;
+  color: var(--grayishBlue);
+}
+
+.wrapper {
+  padding: 0 1.5rem;
+}
+
+.hero {
   text-align: center;
-  text-transform: uppercase;
+}
+.hero .copy {
+  margin-bottom: 2.5rem;
+}
+
+.title__h1 {
+  font-size: 2.7rem;
+  color: var(--darkBlue);
+  font-weight: 300;
+  line-height: 1.2;
+  margin: 0;
+  margin-bottom: 0.5rem;
+}
+
+.copy {
+  line-height: 1.4;
+  font-size: 0.9rem;
+}
+
+.button {
+  border: none;
+  padding: 0.7rem 1.8rem;
+  font-size: 1rem;
+  border-radius: 1.5rem;
+  color: var(--white);
+  background: linear-gradient(to right, var(--limeGreen) 0%, var(--brightCyan) 100%);
 }
 
 /*# sourceMappingURL=style.css.map */
