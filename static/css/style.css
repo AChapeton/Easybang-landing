@@ -1,0 +1,12 @@
+body {
+  border: 10px solid red;
+  font-family: "Public Sans", sans-serif;
+}
+
+h1 {
+  border: 1px solid orange;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+/*# sourceMappingURL=style.css.map */
