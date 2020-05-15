@@ -40,6 +40,25 @@
   margin-bottom: 1.4rem;
 }
 
+.lastArticles {
+  background: var(--lightGray);
+}
+.lastArticles__grid {
+  display: grid;
+  grid-row-gap: 2rem;
+}
+.lastArticles__item {
+  border-radius: 0.5rem;
+  overflow: hidden;
+  background: var(--white);
+  padding: 0 2rem;
+}
+.lastArticles__item img {
+  width: 100%;
+  object-fit: cover;
+  margin: 0 -2rem;
+}
+
 :root {
   --darkBlue: hsl(233, 26%, 24%);
   --limeGreen:hsl(136, 65%, 51%);
