@@ -1,9 +1,10 @@
 .lastArticles{
     // border: 1px solid blue;
     background: var(--lightGray);
-    padding-top: 5rem;
+    padding: 5rem 0;
     .title__h1{
         text-align: center;
+        padding-bottom: 1rem;
     }
     .title__h3{
         text-align: left;
@@ -31,7 +32,7 @@
         img{
             width: 100%;
             object-fit: cover;
-            margin: 0 -2rem;
+            display: block;
         }
     }
 }

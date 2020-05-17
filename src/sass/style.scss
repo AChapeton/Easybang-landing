@@ -3,6 +3,7 @@
 @import "./menu.scss";
 @import "./why.scss";
 @import "./lastArticles.scss";
+@import "./footer.scss";
 
 :root{
     --darkBlue: hsl(233, 26%, 24%);
@@ -32,22 +33,27 @@ body{
     padding: 0 var(--wrapperSpace);
 }
 
+//Los mixin son un conjunto de propiedades que luego pueden ser importadas a otras clases, con el objetivo de no volver a repetirlas
+@mixin title {
+    font-size: 2.5rem;
+    color: var(--darkBlue);
+    font-weight: 300;
+    line-height: 1.2;
+    margin: 0;
+    margin-bottom: .5rem;
+}
+
 .title{
     &__h1{
-        // border: 1px solid blue;
-        font-size: 2.5rem;
-        color: var(--darkBlue);
-        font-weight: 300;
-        line-height: 1.2;
-        margin: 0;
-        margin-bottom: .5rem;
+        @include title;
+        
     }
     &__h2{
-        @extend .title__h1;
+        @include title;
         font-size: 1.5rem;
     }
     &__h3{
-        @extend .title__h1;
+        @include title;
         font-size: 1rem;
     }
 }
@@ -66,4 +72,33 @@ body{
     background: linear-gradient(to right, var(--limeGreen) 0%, var(--brightCyan) 100%);
 }
 
+@mixin icon {
+    width: 25px;
+    height: 25px;
+    //Cuando es un ancla, el display por defecto es "inline", lo que hace que no tenga ancho ni alto
+    display: inline-flex;
+    background-repeat: no-repeat;
+}
 
+.icon{
+    &__facebook{
+        @include icon();
+        background-image: url('../images/icon-facebook.svg');
+    }
+    &__youtube{
+        @include icon();
+        background-image: url('../images/icon-youtube.svg');
+    }
+    &__twitter{
+        @include icon();
+        background-image: url('../images/icon-twitter.svg');
+    }
+    &__pinterest{
+        @include icon();
+        background-image: url('../images/icon-pinterest.svg');
+    }
+    &__instagram{
+        @include icon();
+        background-image: url('../images/icon-instagram.svg');
+    }
+}
