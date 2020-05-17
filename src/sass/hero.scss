@@ -2,6 +2,7 @@
     // border: 1px solid red;
     text-align: center;
     padding-bottom: 5rem;
+    background: var(--lightGray);
     .copy{
         margin-bottom: 2.5rem;
     }
@@ -13,5 +14,53 @@
         margin-bottom: 1.2rem;
         background: url('../images/image-mockups.png') center bottom no-repeat, url('../images/bg-intro-mobile.svg') center no-repeat;
         background-size: 345px, cover;
+    }
+    @media screen and (min-width: 768px){
+        text-align: left;
+        //El background de imágenes ahora pasa a estar en el elemento padre para posicionarlo
+        background: url('../images/bg-intro-desktop.svg') left 650px top -290px no-repeat;
+        background-size: cover;
+        min-height: 550px;
+        box-sizing: border-box;
+        //No se vuelve a colocar la clase hero porque sass ya toma en cuenta que el media querie está dentro de esta clase
+        &__content{
+            position: relative;
+            display: grid;
+            align-items: center;
+            grid-template-areas: "description image";
+            grid-template-columns: 480px 1fr;
+            min-height: 550px;
+        }
+        &__description{
+            grid-area: description;
+        }
+        &__image{
+            grid-area: image;
+            //Inherit: Hereda la propiedad del elemento padre
+            min-height: inherit;
+            // background: none;
+            position: absolute;
+            width: 500px;
+            height: 768px;
+            // left: 550px;
+            left: 0;
+            top: 0;
+            background: url('../images/image-mockups.png') left bottom no-repeat;
+            background-size: cover;
+        }        
+    }
+    @media screen and (min-width: 1024px){
+        // background: url('../images/bg-intro-desktop.svg') left 650px top -290px no-repeat;
+        &__content{
+            // position: static;
+        }
+        &__image{
+            // width: 730px;
+            background: url('../images/image-mockups.png') right -100px bottom 0 no-repeat;
+            background-size: 100%;
+            left: 150px;
+            right: 0;
+            top: 0;
+        }
     }
 }

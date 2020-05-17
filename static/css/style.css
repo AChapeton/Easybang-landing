@@ -1,12 +1,33 @@
 .header {
   display: flex;
-  padding: 1.5rem;
+  padding: 1rem 0;
   justify-content: space-between;
+}
+.header__logo {
+  align-self: center;
+}
+.header .button {
+  display: none;
+}
+.header__content {
+  display: flex;
+  justify-content: space-between;
+}
+@media screen and (min-width: 1024px) {
+  .header .button {
+    display: inline;
+  }
+  .header__content {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
 }
 
 .hero {
   text-align: center;
   padding-bottom: 5rem;
+  background: var(--lightGray);
 }
 .hero .copy {
   margin-bottom: 2.5rem;
@@ -18,10 +39,68 @@
   background: url("../images/image-mockups.png") center bottom no-repeat, url("../images/bg-intro-mobile.svg") center no-repeat;
   background-size: 345px, cover;
 }
+@media screen and (min-width: 768px) {
+  .hero {
+    text-align: left;
+    background: url("../images/bg-intro-desktop.svg") left 650px top -290px no-repeat;
+    background-size: cover;
+    min-height: 550px;
+    box-sizing: border-box;
+  }
+  .hero__content {
+    position: relative;
+    display: grid;
+    align-items: center;
+    grid-template-areas: "description image";
+    grid-template-columns: 480px 1fr;
+    min-height: 550px;
+  }
+  .hero__description {
+    grid-area: description;
+  }
+  .hero__image {
+    grid-area: image;
+    min-height: inherit;
+    position: absolute;
+    width: 500px;
+    height: 768px;
+    left: 0;
+    top: 0;
+    background: url("../images/image-mockups.png") left bottom no-repeat;
+    background-size: cover;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .hero__image {
+    background: url("../images/image-mockups.png") right -100px bottom 0 no-repeat;
+    background-size: 100%;
+    left: 150px;
+    right: 0;
+    top: 0;
+  }
+}
 
 .menu {
+  display: none;
+  list-style: none;
+}
+.menu__button {
   width: 40px;
+  height: 40px;
   background: url("../images/icon-hamburger.svg") center no-repeat;
+}
+.menu a {
+  text-decoration: none;
+  color: var(--grayishBlue);
+  padding: 0 0.8em;
+}
+@media screen and (min-width: 1024px) {
+  .menu {
+    display: flex;
+  }
+  .menu__button {
+    display: none;
+  }
 }
 
 .why {
@@ -38,6 +117,21 @@
 }
 .why__item img {
   margin-bottom: 1.4rem;
+}
+@media screen and (min-width: 768px) {
+  .why {
+    text-align: left;
+  }
+  .why__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 1rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .why__grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 
 .lastArticles {
@@ -76,6 +170,24 @@
   object-fit: cover;
   display: block;
 }
+@media screen and (min-width: 768px) {
+  .lastArticles .title__h1 {
+    text-align: left;
+  }
+  .lastArticles__item-content {
+    padding: 1rem;
+  }
+  .lastArticles__grid {
+    display: grid;
+    grid-column-gap: 30px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (min-width: 1024px) {
+  .lastArticles__grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
 
 .footer {
   background-color: var(--darkBlue);
@@ -83,7 +195,7 @@
   padding: 2rem 0;
   text-align: center;
 }
-.footer svg {
+.footer__logo {
   display: block;
   margin: auto;
   margin-bottom: 2rem;
@@ -104,6 +216,35 @@
 .footer__copyright {
   color: var(--grayishBlue);
   margin-top: 2.5rem;
+}
+@media screen and (min-width: 1024px) {
+  .footer .wrapper {
+    display: grid;
+    grid-template-columns: 200px 1fr 400px;
+    grid-template-areas: "logo links button" "social links copyright";
+    grid-column-gap: 7rem;
+  }
+  .footer__links {
+    grid-area: links;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: start;
+  }
+  .footer__logo {
+    grid-area: logo;
+    margin: initial;
+  }
+  .footer__social {
+    grid-area: social;
+  }
+  .footer__button {
+    grid-area: button;
+    text-align: right;
+  }
+  .footer__copyright {
+    grid-area: copyright;
+    text-align: right;
+  }
 }
 
 :root {
@@ -130,6 +271,9 @@ body {
 
 .wrapper {
   padding: 0 var(--wrapperSpace);
+  max-width: 1115px;
+  width: 100%;
+  margin: auto;
 }
 
 .title__h1 {

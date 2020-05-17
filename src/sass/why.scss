@@ -15,4 +15,18 @@
             margin-bottom: 1.4rem;
         }
     }
+    @media screen and (min-width: 768px){
+        // border: 1px solid red;
+        text-align: left;
+        &__grid{
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-column-gap: 1rem;
+        }
+    }
+    @media screen and (min-width: 1024px){
+        &__grid{
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
 }

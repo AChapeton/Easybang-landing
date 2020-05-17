@@ -4,7 +4,7 @@
     color: var(--white);
     padding: 2rem 0;
     text-align: center;
-    svg{
+    &__logo{
         display: block;
         margin: auto;
         margin-bottom: 2rem;
@@ -25,5 +25,36 @@
     &__copyright{
         color: var(--grayishBlue);
         margin-top: 2.5rem;
+    }
+    @media screen and (min-width: 1024px){
+        // background: red;
+        .wrapper{
+            display: grid;
+            grid-template-columns: 200px 1fr 400px;
+            grid-template-areas: "logo links button"
+                                 "social links copyright";
+            grid-column-gap: 7rem;
+        }
+        &__links{
+            grid-area: links;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            justify-items: start;
+        }
+        &__logo{
+            grid-area: logo;
+            margin: initial;
+        }
+        &__social{
+            grid-area: social;
+        }
+        &__button{
+            grid-area: button;
+            text-align: right;
+        }
+        &__copyright{
+            grid-area: copyright;
+            text-align: right;
+        }
     }
 }
