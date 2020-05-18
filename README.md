@@ -1,4 +1,4 @@
-#Easybank
+# Easybank
 
 Landing page for EasyBank. Learning how to use SASS.
 
